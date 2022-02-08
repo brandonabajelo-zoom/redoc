@@ -33,7 +33,8 @@ export async function loadAndBundleSpec(specUrlOrObject: object | string): Promi
   const {
     bundle: { parsed },
   } = await bundle(bundleOpts);
-  return parsed.swagger !== undefined ? convertSwagger2OpenAPI(parsed) : parsed;
+  // return parsed.swagger !== undefined ? convertSwagger2OpenAPI(parsed) : parsed;
+  return parsed;
 }
 
 export function convertSwagger2OpenAPI(spec: any): Promise<OpenAPISpec> {
